@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Wire Demo">
+        <div style="height = 200px">
+            <!-- lightning data table -->
+            <lightning-datatable
+                key-field="id"
+                data={dataList}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                hide-checkbox-column
+                columns={columnsList}
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
