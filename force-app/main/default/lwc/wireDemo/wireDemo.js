@@ -16,7 +16,7 @@ export default class WireDemo extends LightningElement {
             this.data = data;
         }
         else if(error){
-            console.log("Error Occurred..");
+            console.log("Error Occurred..!!!");
         }
     }
 }

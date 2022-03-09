@@ -2,8 +2,8 @@ import { LightningElement, wire, track } from 'lwc';
 import getTopicList from '@salesforce/apex/wireDemoClass.getTopicList';
 
 const columns = [
-    { label : 'Name', field : "Name"},
-    { label : 'SF Topic ID', field : "ID"},
+    { label : 'Name', fieldName : "Name"},
+    { label : 'SF Topic ID', fieldName : "Id"},
 ];
 export default class WireDemo extends LightningElement {
 
@@ -12,6 +12,11 @@ export default class WireDemo extends LightningElement {
 
     @wire(getTopicList)
     wireSfTopic({data,error}){
-        
+        if(data){
+            this.data = data;
+        }
+        else if(error){
+            console.log("Error Occurred..!!!");
+        }
     }
 }
